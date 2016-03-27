@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root spacing="5.0" type="HBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER" HBox.hgrow="ALWAYS">
+         <children>
+            <TextArea fx:id="chatTextArea" editable="false" prefHeight="689.0" prefWidth="789.0" BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS" />
+            <VBox prefHeight="94.0" prefWidth="963.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="946.0" spacing="10.0">
+                     <children>
+                        <Label text="To:" />
+                        <ComboBox fx:id="toUser" onAction="#onToUserChange" prefHeight="25.0" prefWidth="200.0" />
+                        <CheckBox fx:id="isPrivate" disable="true" mnemonicParsing="false" text="Private" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="963.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="messageText" prefHeight="31.0" prefWidth="842.0" HBox.hgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" onAction="#sendMessage" text="Send" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox>
+         <children>
+            <Label text="Users">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ListView fx:id="userList" prefHeight="665.0" prefWidth="169.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</fx:root>

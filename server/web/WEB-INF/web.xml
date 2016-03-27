@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <servlet>
+        <servlet-name>User</servlet-name>
+        <servlet-class>com.monochord.chat.server.UserServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ChatRoom</servlet-name>
+        <servlet-class>com.monochord.chat.server.ChatRoomServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddMessage</servlet-name>
+        <servlet-class>com.monochord.chat.server.AddMessageServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>User</servlet-name>
+        <url-pattern>/user</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChatRoom</servlet-name>
+        <url-pattern>/room</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddMessage</servlet-name>
+        <url-pattern>/message</url-pattern>
+    </servlet-mapping>
+
+</web-app>
