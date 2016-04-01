@@ -45,6 +45,7 @@ public final class ChatRoom {
 
         name = other.name;
 
+        userList = new UserList();
         List<User> otherUserList = other.userList.getSynchronizedUsers();
         synchronized (otherUserList) {
             otherUserList.forEach(user -> userList.getUsers().add(user));
