@@ -145,7 +145,7 @@ public class ChatRoomServlet extends HttpServlet {
         if (session == null)
             return;
 
-        ActionHandler.forParameter(request.getParameter("action"), GetHandler.values())
+        ActionHandler.forAction(request.getParameter("action"), GetHandler.values())
                 .handle(session, request, response);
     }
 

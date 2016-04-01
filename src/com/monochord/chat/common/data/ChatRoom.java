@@ -44,7 +44,11 @@ public final class ChatRoom {
             throw new IllegalArgumentException("Invalid messagesFrom parameter value: " + messagesFrom);
 
         name = other.name;
-        userList = other.userList;
+
+        List<User> otherUserList = other.userList.getSynchronizedUsers();
+        synchronized (otherUserList) {
+            otherUserList.forEach(user -> userList.getUsers().add(user));
+        }
 
         messageList = new MessageList();
         List<Message> otherMessages = other.messageList.getSynchronizedMessages();

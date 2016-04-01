@@ -76,6 +76,7 @@ public final class Client {
 
     public void createChatRoom(String roomName) {
         checkLoggedIn();
+        Objects.requireNonNull(roomName);
 
         String url = encodeURL(credentials.getServer() + "room?action=new&name=" + roomName);
         try (Request request = new Request(url, Method.GET, null, sessionCookie)) {
@@ -86,6 +87,7 @@ public final class Client {
 
     public void joinChatRoom(String roomName) {
         checkLoggedIn();
+        Objects.requireNonNull(roomName);
 
         String url = encodeURL(credentials.getServer() + "room?action=join&name=" + roomName);
         try (Request request = new Request(url, Method.GET, null, sessionCookie)) {
@@ -96,6 +98,7 @@ public final class Client {
 
     public void leaveChatRoom(String roomName) {
         checkLoggedIn();
+        Objects.requireNonNull(roomName);
 
         String url = encodeURL(credentials.getServer() + "room?action=leave&name=" + roomName);
         try (Request request = new Request(url, Method.GET, null, sessionCookie)) {
@@ -106,6 +109,7 @@ public final class Client {
 
     public ChatRoom getChatRoom(String roomName, int messagesFrom) {
         checkLoggedIn();
+        Objects.requireNonNull(roomName);
         if (messagesFrom < 0)
             throw new IllegalArgumentException("Invalid messagesFrom parameter value: " + messagesFrom);
 

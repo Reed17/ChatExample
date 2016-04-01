@@ -30,10 +30,10 @@ interface ActionHandler {
             throws ServletException, IOException;
 
 
-    static <H extends ActionHandler> ActionHandler forParameter(String paramValue, H[] handlers) {
-        if (paramValue != null) {
+    static <H extends ActionHandler> ActionHandler forAction(String actionName, H[] handlers) {
+        if (actionName != null) {
             for (H handler : handlers)
-                if (handler.getName().equalsIgnoreCase(paramValue))
+                if (handler.getName().equalsIgnoreCase(actionName))
                     return handler;
         }
         return UNKNOWN;
